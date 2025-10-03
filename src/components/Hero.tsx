@@ -24,12 +24,27 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
       
-      {/* Gradient orbs */}
+      {/* Gradient orbs with enhanced animations */}
       <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/30 rounded-full blur-[100px] animate-float"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }}></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/20 rounded-full blur-[100px] animate-pulse-slow"></div>
+
+      {/* Animated scan lines */}
+      <div className="absolute inset-0 opacity-10">
+        {[...Array(3)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent"
+            style={{
+              top: `${i * 33}%`,
+              animation: `slide-horizontal ${4 + i}s linear infinite`,
+              animationDelay: `${i * 1.5}s`,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="container relative z-10 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-8">

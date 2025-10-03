@@ -88,7 +88,12 @@ const Projects = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}></div>
+              
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${project.gradient} blur-sm`}></div>
+              </div>
               
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-4">
