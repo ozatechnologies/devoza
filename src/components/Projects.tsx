@@ -97,7 +97,7 @@ const Projects = () => {
               
               <div className="relative z-10">
                 <div className="flex justify-between items-start mb-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center glow-primary`}>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
                     <span className="text-2xl">💎</span>
                   </div>
                   {project.link && (
